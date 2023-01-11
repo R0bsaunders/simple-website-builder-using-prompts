@@ -1,45 +1,44 @@
-var headingName = prompt("What is the heading?");
+var headingName = prompt("What text do you want in the H1?");
 
 if (headingName == 'null') {
   headingName = '';
+
 } else {
   var h1 = document.createElement('h1');
-
   h1.textContent = headingName;
-
   h1.style.cssText = 'text-align: center;'
-
   document.body.appendChild(h1);
+
 };
 
 do {
 
-  var divCols = prompt("How many columns would you like?");
+  var divCols = prompt("How many columns would you like?\n\nYou will add the text and background-colour for each in the next prompt");
 
   if (divCols != parseInt(divCols)) {
-    alert("You must enter a number")
+    alert("You must enter a number");
+
   } else {
+
     break;
-  }
+  };
 
 } while (true);
 
 
 
-var bodyDiv = document.createElement('div')
-
-bodyDiv.setAttribute("id", "userDiv")
-
-bodyDiv.style.cssText = 'display: flex; flex-wrap: wrap; justify-content: center;'
-
-document.body.appendChild(bodyDiv)
+var bodyDiv = document.createElement('div');
+bodyDiv.setAttribute("id", "userDiv");
+bodyDiv.style.cssText = 'display: flex; flex-wrap: wrap; justify-content: center;';
+document.body.appendChild(bodyDiv);
 
 for (var i = 0; i < divCols; i++) {
 
-  var col = document.createElement('p')
+  var col = document.createElement('p');
   col.setAttribute("id", "column " + (i+1));
   col.textContent = prompt("What text goes in paragraph " + (i+1));
-  var c = prompt("What color background?").toUpperCase();
+  var c = prompt("What color background?\n\nYou may type a common colour name (black, yellow, red etc), or enter a hex value (#fffff etc").toUpperCase();
+
   if (c == 'BLACK') {
     var t = 'white'
 
