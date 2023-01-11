@@ -12,8 +12,19 @@ if (headingName == 'null') {
   document.body.appendChild(h1);
 };
 
+do {
 
-var divCols = prompt("How many columns would you like?");
+  var divCols = prompt("How many columns would you like?");
+
+  if (divCols != parseInt(divCols)) {
+    alert("You must enter a number")
+  } else {
+    break;
+  }
+
+} while (true);
+
+
 
 var bodyDiv = document.createElement('div')
 
